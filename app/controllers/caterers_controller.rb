@@ -1,4 +1,5 @@
 class CaterersController < ApplicationController
+    skip_before_action :verify_authenticity_token
     def create
         caterer = Caterer.create(caterer_params)
         if caterer.valid?
