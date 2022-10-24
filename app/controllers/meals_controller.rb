@@ -1,4 +1,5 @@
 class MealsController < ApplicationController
+    skip_before_action :verify_authenticity_token
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     def index
         meals = Meal.all
@@ -11,13 +12,13 @@ class MealsController < ApplicationController
     end
 
     def create
-        meal = Meal.create!(shelf_params)
+        meal = Meal.create!(meal_params)
         render json: meal, status: :created
     end
 
     def update 
         meal = Meal.find_by(id: params[:id])
-        meal.update(shelf_params)
+        meal.update(meal_params)
         render json: meal
     end
 
