@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
             render json: { error: "email or password" }, status: :unauthorized
         end
     end
+    
     def create_caterer
         caterer = Caterer.find_by(email: params[:email])
         if caterer&.authenticate(params[:password])

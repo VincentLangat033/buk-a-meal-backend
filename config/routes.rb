@@ -14,11 +14,8 @@ Rails.application.routes.draw do
   post "/signin", to: "sessions#create_caterer" #login as admin
   get "/current", to: "caterers#show"
 
-
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
   resources :meals
-  
+
+
+
 end
