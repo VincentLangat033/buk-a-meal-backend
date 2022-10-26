@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders
 
 
   post "/register", to: "users#create"
