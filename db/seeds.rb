@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 # Meal.create(name: "Beef-pilau", price: 50, quantity: 100 , image_url = "https://potentash.com/wp-content/uploads/2020/06/beef-pilau-e1653046248545-640x570.jpg", ingredients: "meat, pilau", description: "This is a well prepared pilau", day: "Monday")
 # Meal.destroy_all
 puts("Seeding")
@@ -23,3 +24,4 @@ Meal.create!(name: "pork with pilau", price: "50", quantity: 90, description: "B
 content/uploads/2020/06/beef-pilau-e1653046248545-640x570.jpg", ingredients: "goat meat, rice and spices", caterer_id: 1)
 
 puts("Done seeding")
+
