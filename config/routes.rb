@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :orders
 
 
- # resources :meals
+ resources :meals
 
   get '/me', to: "users#show"
   post '/login', to: "sessions#create"
