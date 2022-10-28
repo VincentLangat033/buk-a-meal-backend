@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
- # resources :meals
+ resources :meals
 
   get '/me', to: "users#show"
   post '/login', to: "sessions#create"
