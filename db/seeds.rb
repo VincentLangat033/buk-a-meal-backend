@@ -22,4 +22,23 @@ content/uploads/2020/06/beef-pilau-e1653046248545-640x570.jpg", ingredients: "go
 Meal.create!(name: "pork with pilau", price: "50", quantity: 90, description: "Beef pilau is prepared and can be served in different forms. Have a great taste of our pilau here", image_url: "https://potentash.com/wp-
 content/uploads/2020/06/beef-pilau-e1653046248545-640x570.jpg", ingredients: "goat meat, rice and spices", caterer_id: 1)
 
+User.create!([
+  {
+    name: "Alex",
+    username: "alexkimathi",
+    email: "admin@gmail.com",
+    password: "1234",
+    password_confirmation: "1234" 
+  },
+  {
+    name: "Mabel",
+    username: "mabelkimani",
+    email: "mabel@gmail.com",
+    password: "1234",
+    password_confirmation: "1234" 
+  }
+
+ 
+])
+
 puts("Done seeding")
