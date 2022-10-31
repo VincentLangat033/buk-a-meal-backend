@@ -1,6 +1,7 @@
 class MealsController < ApplicationController
     skip_before_action :verify_authenticity_token
-    skip_before_action :authenticate_user, only: [:index, :create, :show, :destroy]
+    skip_before_action :authenticate_user, only: [:index]
+    # before_action :is_authorized, only: [:destroy]
     # rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     protect_from_forgery with: :null_session
     rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
@@ -10,6 +11,7 @@ class MealsController < ApplicationController
     end
 
     def show
+        
         meal = Meal.find(params[:id])
         render json: meal
     end
@@ -42,6 +44,11 @@ class MealsController < ApplicationController
 
     def meal_params
         params.permit(:id, :name, :price, :quantity, :description, :image_url, :ingredients) 
+    end
+    def is_authorized
+        permitted = current_user.authenticate_user? 
+        # || @meal == current_user
+        render json: "Accessibility is not permitted", status: :forbidden unless permitted
     end
 
 
