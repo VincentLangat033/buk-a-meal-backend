@@ -1,5 +1,15 @@
 puts("Seeding")
 
+
+Category.create!(day: "Monday")
+Category.create!(day: "Tuesday")
+Category.create!(day: "Wednesday")
+Category.create!(day: "Thursday")
+Category.create!(day: "Friday")
+Category.create!(day: "Saturday")
+Category.create!(day: "Sunday")
+
+
 Meal.create!(name: "Beef with pilau", price: "50", quantity: "100", description: "Beef pilau is prepared and can be served in different forms. Have a great taste of our pilau here", image_url: "https://potentash.com/wp-
 content/uploads/2020/06/beef-pilau-e1653046248545-640x570.jpg", ingredients: "goat meat, rice and spices", caterer_id: 1)
 Meal.create!(name: "Beef with pilau", price: "55", quantity: 80, description: "Beef pilau is prepared and can be served in different forms. Have a great taste of our pilau here", image_url: "https://potentash.com/wp-
