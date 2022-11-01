@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
     skip_before_action :verify_authenticity_token
-    skip_before_action :authenticate_user, only: [:index]
+    skip_before_action :authenticate_user, only: [:index, :show]
     # before_action :is_authorized, only: [:destroy]
     # rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     protect_from_forgery with: :null_session
