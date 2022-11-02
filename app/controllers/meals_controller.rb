@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
     skip_before_action :verify_authenticity_token
-    skip_before_action :authenticate_user, only: [:index, :show]
+    skip_before_action :authenticate_user, only: [:index, :show, :create]
     # before_action :is_authorized, only: [:destroy]
     # rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
     protect_from_forgery with: :null_session
@@ -43,7 +43,7 @@ class MealsController < ApplicationController
     end
 
     def meal_params
-        params.permit(:id, :name, :price, :quantity, :description, :image_url, :ingredients) 
+        params.permit(:id, :name, :price, :quantity, :description, :image_url, :ingredients, :category_id ) 
     end
     def is_authorized
         permitted = current_user.authenticate_user? 
