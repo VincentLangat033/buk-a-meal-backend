@@ -715,7 +715,7 @@ Meal.create!([
 
 )
 
-Order.create!(
+Order.create!([
   {
     name: "Sea Prize",
     price: "4800"
